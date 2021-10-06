@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .message {
+      background-color : #fff3d4;
+      border: solid 1px orange;
+      padding : 2px;
+      color : black;
+      font-size : 25pt;
+
+    }
+  </style>
+
+ 
+</head>
+<body>
+  <p id="textData" class="message color-text-red">Thisi is a JS getComputedStyle() Demo!</p>
+
+  <script>
+    let element = document.querySelector('#textData');
+
+    for(let classCss of element.classList){
+      console.log(classCss)
+    }
+    
+// memecah kelas, didalam atribut tersebut ada berapa si class css yang ada
+    
+  </script>
+</body>
+</html>

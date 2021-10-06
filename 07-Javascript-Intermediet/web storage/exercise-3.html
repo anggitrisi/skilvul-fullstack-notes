@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Regex and DOM - 01</title>
+  </head>
+  <body>
+    <form id="form">
+      <div>
+        <label for="angka">angka</label>
+        <input type="text" id="angka" /> <br><br>
+      </div>
+      <button id="btn-submit" type="submit">submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+      const elInputAngka = document.querySelector("#angka");
+      const elBtnSubmit = document.querySelector("#btn-submit");
+      const elForm = document.querySelector("#form");
+
+      function inputCounter(angka) {
+        let inputCounter = sessionStorage.getItem("inputCounter");
+        if(typeof(Storage) !== "undefined") {
+          if (inputCounter) {
+            inputCounter = parseInt(inputCounter) + Number(angka);
+            sessionStorage.setItem("inputCounter", inputCounter);
+          } else {
+            sessionStorage.setItem("inputCounter", angka) ;
+          }
+          document.getElementById("result").innerHTML = "Input Counter : " + sessionStorage.getItem("inputCounter");
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+
+      elForm.onsubmit = function(e) {
+        e.preventDefault();
+        //extracting user input
+        const angka = elInputAngka.value;
+
+        inputCounter(angka);
+      }
+
+      
+    </script>
+  </body>
+</html>

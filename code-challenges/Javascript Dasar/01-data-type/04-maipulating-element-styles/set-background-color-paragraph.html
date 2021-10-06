@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>Set the background color of a paragraph</title>
+    <style>
+      /* #p1{
+        background-color: red;
+      }
+      #p2{
+        background-color: grey;
+
+      } */
+    </style>
+  </head>
+  <body>
+    <input type="button" value="Click to set paragraph background color" onclick="setBackground()">
+    <p id="p1">Welcome to DOM World</p>
+    <p id= "p2">You will make a website more interactives</p> 
+
+    <script>
+      // let btn = document.querySelector('#btn');
+      let p1 = document.querySelector('#p1');
+      let p2 = document.querySelector('#p2');
+
+      let i = 1;
+  
+      function setBackground() {
+        if(i%2){
+          p1.style.background = "red";
+          p2.style.background = "grey";
+        } else {
+          p1.style.background = "none";
+          p2.style.background = "none";
+        }
+        i++
+      }
+  
+      
+    </script>
+  </body>
+</html>

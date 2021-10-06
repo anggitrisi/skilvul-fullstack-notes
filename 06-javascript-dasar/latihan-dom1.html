@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+ 
+</head>
+<body>
+  <p id="content">Javascript Setting Style Demo!</p>
+
+  <script>
+    let p = document.querySelector('#content');
+    p.style.color = 'red';
+    p.style.fontWeight = 'bold'
+
+    let i = 1
+
+    setInterval(() => {
+      if ( i%2 ){
+        p.style.color = 'green';
+      } else {
+        p.style.color = 'blue';
+      }
+      i++
+    }, 1000)
+  </script>
+</body>
+</html>

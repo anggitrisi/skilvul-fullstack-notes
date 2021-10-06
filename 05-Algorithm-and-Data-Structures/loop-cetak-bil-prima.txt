@@ -1,0 +1,19 @@
+/// Kamu diminta untuk membuat sebuah perulangan menggunakan for loop, untuk mencetak angka prima dari 1 ~ 100
+
+START 
+isPrima = True
+FOR ( angka <- 1, angka <=100, angka <- angka+1 )
+  IF angka==1{
+    isPrima=False
+  } ELSE IF (angka==2){
+    isPrima=True
+  } ELSE {
+    FOR ( pembagi <- 2, pembagi < angka, pembagi+1 ){
+      if (angka%pembagi == 0) {
+        isPrima = False
+      } 
+    }
+  IF (isPrima==True){
+    STORE angkaPrima with angka
+  }
+  }

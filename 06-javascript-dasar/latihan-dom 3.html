@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .message {
+      background-color : #fff3d4;
+      border: solid 1px orange;
+      padding : 2px;
+      color : black;
+      font-size : 25pt;
+
+    }
+  </style>
+
+ 
+</head>
+<body>
+  <p id="textData" class="message color-text-red">Thisi is a JS getComputedStyle() Demo!</p>
+
+  <script>
+    let element = document.querySelector('#textData');
+    let arrClassElement = element.className.split(" ");
+
+    let i = 1;
+    setInterval(() => {
+      if(i%2){
+        element.className = arrClassElement[1]
+      } else {
+        element.className = arrClassElement[0]
+      }
+      i++
+    }, 1000)
+
+    
+  </script>
+</body>
+</html>

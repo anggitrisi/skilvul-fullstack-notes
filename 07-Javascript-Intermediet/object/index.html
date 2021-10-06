@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let mahasiswa = {
+      nim : '181402128',
+      name : 'Anggitri Sihombing',
+      age : 20,
+      begadang : function(status_banyak_tugas){
+        if(status_banyak_tugas){
+          return 'Tugas banyak bro!'
+        } else {
+          return 'Istirahat bro!'
+        }
+        
+      }
+    }
+
+    console.log(mahasiswa.begadang(false)) // memanggil fungsi begadang dalam objek
+
+    mahasiswa.age = 21 // mengubah atribut
+
+    mahasiswa = { // mengganti suatu objek
+      nim : ''
+    }
+
+    delete mahasiswa.age // menghapus 
+
+    console.log(mahasiswa.nim) // cara 1 akses atribut dalam  object
+
+    console.log(mahasiswa['nim']) // cara 1 akses atribut dalam  object
+
+    console.log(typeof(mahasiswa))
+  </script>
+
+  <script>
+    let person = {
+      name : "Anggitri Sihombing",
+      address : {
+        nama_jalan : 'Jalan Jamin Ginting',
+        rt : 1,
+        rw : 1,
+        position : {
+          latitude : 112.123,
+          longitude: 1132
+        }
+      },
+      unit : ["UNIT1", "UNIT2"] // object of array
+    }
+
+    console.log(person.address.position.longitude)
+    console.log(person.unit[0])
+
+  </script>
+
+  <script>
+    // array of object
+    let personArrayOfObject = [
+      {
+        name : "Anggitri Sihombing",
+        age : 20
+      },
+      {
+        name : "Johnny",
+        age : 24
+      }
+    ]
+    
+    // cara - 1 akses array of object
+    personArrayOfObject.map((data) => {
+      console.log(data)
+    } )
+
+
+    // cara - 1 akses array of object
+    for(let index = 0; index < personArrayOfObject.length; index++){
+      console.log(personArrayOfObject[index])
+    }
+
+    console.log("berfore add person", personArrayOfObject)
+    
+    // menambahkan kedalam personArrayOfObject
+    let new_person = {
+      name : "Udin",
+      age : 23
+    }
+
+    personArrayOfObject.push(new_person)
+    console.log("After add person", personArrayOfObject)
+  </script>
+
+  <script>
+    let new_person2 = {
+      name : "Anggitri",
+      age : 21
+    }
+
+    for (let key in new_person2){
+      // console.log('daftar key', key);
+      console.log('tes',new_person2[key]); // mengakses tanpa harus mendefinisikan key 
+    }
+  </script>
+
+  <script>
+    let person4 = {
+      name : "person4",
+      age : 23
+    }  
+
+    function changeData(obj){
+      obj.age = 27
+      obj.name = "Agung"
+    }
+
+    changeData(person)
+    console.log(person.name)
+    console.log(person.age)
+  </script>
+</body>
+</html>

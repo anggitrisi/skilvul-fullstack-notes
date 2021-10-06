@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- mengambil input user dengan atribut id="name" pada elemen input setelah klik button submit -->
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name"> <!-- 1. buat atribut id pada elemen input-->
+  <button onclick="getName()">submit</button>  <!-- 2. onclik yang valuenya adalah untuk mengakses fungsi getName() --> 
+  <script>
+    function getName(){ // 3. buat fungsi getName()
+      let name = document.getElementById('name').value; // 4. akses elemen berdasarkan id, dan ambil property value
+      console.log(name);
+    }
+  </script>
+
+  <!-- mengambil value dari elemen input dengan id ="umur" -->
+  <input id="umur" type="text" value="20" />
+  <script>
+    let umur = document.getElementById("umur").value
+    console.log(umur)
+  </script>
+
+  <!-- mengambil elemen berdasarkan nama tag dengan method getElementsByTagName(tag) -->
+  <h1 id="title">Hello, World!</h1>
+  <p>Selamat Datang di Skilvul</p>
+  <h1 class="subtitle">Mari Belajar JavaScript</h1>
+
+  <script>
+    let semuaTagH1 = document.getElementsByTagName('h1');
+
+    console.log(semuaTagH1); // Output : HTMLCollection(2) [h1#title, h1.subtitle, title: h1#title]
+    console.log(semuaTagH1[0]); // Output : <h1 id="title">Hello, World!</h1>
+    console.log(semuaTagH1[1].innerText); // Output: Mari Belajar JavaScript
+
+  </script>
+
+  <!-- Mengambil elemen berdasarkan nilai atribut class-nya dengan method getElementsByClassName(className) -->
+  <h1 class="header">Hello, World!</h1>
+  <p>Selamat Datang di Skilvul</p>
+  <span class="header">Mari Belajar JavaScript</span>
+
+  <script>
+    let semuaClassHeader = document.getElementsByClassName('header');
+
+    console.log(semuaClassHeader);
+  </script>
+
+  <!-- Mengambil elemen berdasarkan CSS selectornya -->
+  <h1 class="header">Hello, World!</h1>
+  <p id="header2">Selamat Datang di Skilvul</p>
+  <span class="header">Mari Belajar JavaScript</span>
+
+  <script>
+    let h1ClassHeader = document.querySelectorAll('h1.header');
+    console.log(h1ClassHeader);
+  </script>
+</body>
+</html>
